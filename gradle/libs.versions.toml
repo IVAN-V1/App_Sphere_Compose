@@ -1,5 +1,7 @@
 [versions]
 agp = "8.9.0"
+coilCompose = "3.1.0"
+coreSplashscreen = "1.0.0"
 kotlin = "2.0.21"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -16,11 +18,16 @@ kotlinxSerialization ="1.8.0"
 roomRuntime = "2.6.1"
 uiTextGoogleFonts = "1.7.8"
 
+kotlinxCoroutinesAndroid = "1.8.0"
+
 
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
+coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coilCompose" }
+coil-network-okhttp = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coilCompose" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -40,6 +47,7 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
 kotlinx-Serialization-json ={module ="org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
 androidx-ui-text-google-fonts = { module = "androidx.compose.ui:ui-text-google-fonts", version.ref = "uiTextGoogleFonts" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
 
 
 [plugins]
