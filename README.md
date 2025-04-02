@@ -12,7 +12,9 @@
 
 
 > [!NOTE] 
-> # Figma design
+> # Figma design https://www.figma.com/design/fEETLhJzCYkDT7US0MKSW1/Sphere---Books-Mobile-App-UI-Kit-(Community)?node-id=4044-3006&t=qnOL8CrIu3qGfEmg-0
+
+ ![](./captures/Cover.jpg)
 
 
 
