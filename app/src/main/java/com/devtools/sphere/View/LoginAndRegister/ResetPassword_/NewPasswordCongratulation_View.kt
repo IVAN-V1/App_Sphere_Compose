@@ -1,4 +1,4 @@
-package com.devtools.sphere.View.LoginAndRegister
+package com.devtools.sphere.View.LoginAndRegister.ResetPassword_
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -24,23 +24,21 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.devtools.sphere.Components.Buttons
-import com.devtools.sphere.Components.TextFields
 import com.devtools.sphere.Components.Texts
 import com.devtools.sphere.R
 import com.devtools.sphere.ui.theme.SphereTheme
-import com.devtools.sphere.ui.theme.openSansFontFamily
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-
-fun Congratulation_view(nexView: () -> Unit = {} ) {
+@Preview
+fun Congratulation_view_newpassword(nexView: () -> Unit = {} ) {
     val texts = Texts()
     val buttoms = Buttons()
 
-    val textFields = TextFields()
 
     SphereTheme {
 
@@ -88,7 +86,7 @@ fun Congratulation_view(nexView: () -> Unit = {} ) {
                     Spacer(modifier = Modifier.height(16.dp))
 
 
-                    Text("Congratulation!",
+                    Text("Password Changed!!",
                         color = MaterialTheme.colorScheme.secondary,
                         fontWeight = FontWeight.Bold,
                         fontFamily = FontFamily.SansSerif,
@@ -97,14 +95,14 @@ fun Congratulation_view(nexView: () -> Unit = {} ) {
 
                     Spacer(modifier = Modifier.height(16.dp))
 
-                    texts.titleMedium("your account is complete, please enjoy the best menu from us.",
+                    texts.titleMedium("Password changed successfully, you can login again with a new password",
                         Modifier.align(Alignment.CenterHorizontally))
 
 
                     Spacer(modifier = Modifier.height(24.dp))
 
 
-                    buttoms.ButtonLogin("Get Started",nexView)
+                    buttoms.ButtonLogin("Login",nexView)
 
                     Spacer(modifier = Modifier.height(16.dp))
 

@@ -15,7 +15,7 @@ val colorPrimary = Color(0xFFFFFFFF)
 
 val colorSecondary = Color(0xFF1E1E1E)
 
-val colorTerceary = Color(0xFFFAF9FD)
+val colorTerceary = Color(0xFFF5F5F5)
 
 
 val fondo = Color(0xFF1E1F22)

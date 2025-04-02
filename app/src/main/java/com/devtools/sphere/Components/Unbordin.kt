@@ -1,8 +1,8 @@
 package com.devtools.sphere.Components
 
-import android.R.attr.text
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
@@ -33,11 +32,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 import com.devtools.sphere.Model.OnboardingPage
-import com.devtools.sphere.ui.theme.SphereTheme
 
 
 @Composable
-fun OnboardingScreen(nextView: () -> Unit = {}) {
+fun OnboardingScreen(ViewtLogin: () -> Unit = {}, viewSignin: () -> Unit = {} ) {
     var currentIndex by remember { mutableIntStateOf(0) }
 
     val pages = listOf(
@@ -53,7 +51,7 @@ fun OnboardingScreen(nextView: () -> Unit = {}) {
         ),
 
         OnboardingPage(
-            imageRes = R.drawable.aventure, // Reemplaza con otra imagen
+            imageRes = R.drawable.start, // Reemplaza con otra imagen
             title = "Start Your Adventure",
             description = "Ready to embark on a quest for inspiration and knowledge? Your adventure begins now. Let's go!"
         )
@@ -120,15 +118,14 @@ fun OnboardingScreen(nextView: () -> Unit = {}) {
             modifier = Modifier.fillMaxWidth().
             height(60.dp),
 
-            onClick = {
+          onClick = {
+              if (currentIndex < pages.size - 1) {
+                  currentIndex = (currentIndex + 1) % pages.size
+              } else {
+                  ViewtLogin()
+              }
+          },
 
-                currentIndex = (currentIndex + 1) % pages.size
-
-                if (currentIndex == pages.size - 1) {
-                   nextView()
-                }
-
-            },
             colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.secondary),
             shape = MaterialTheme.shapes.medium
         ) {
@@ -148,7 +145,7 @@ fun OnboardingScreen(nextView: () -> Unit = {}) {
         Button(
             modifier = Modifier.fillMaxWidth().
             height(60.dp),
-            onClick = {  },
+            onClick =  viewSignin ,
             colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.tertiary),
             shape = MaterialTheme.shapes.medium
         ) {
@@ -156,7 +153,7 @@ fun OnboardingScreen(nextView: () -> Unit = {}) {
             Text(
                 "Sign in",
                 color = MaterialTheme.colorScheme.
-                secondary
+                secondary,
             )
 
         }

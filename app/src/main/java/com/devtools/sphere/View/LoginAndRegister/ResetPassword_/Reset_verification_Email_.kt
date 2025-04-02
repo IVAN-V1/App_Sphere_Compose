@@ -1,4 +1,4 @@
-package com.devtools.sphere.View.LoginAndRegister
+package com.devtools.sphere.View.LoginAndRegister.ResetPassword_
 
 
 import androidx.compose.foundation.background
@@ -50,7 +50,7 @@ import com.devtools.sphere.ui.theme.SphereTheme
 @OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
-fun verificationEmail_view(nextView: () -> Unit = {} ) {
+fun Reset_verificationEmail_view(nextView: () -> Unit = {} ) {
     val texts = Texts()
     val buttoms = Buttons()
 
@@ -110,7 +110,7 @@ fun verificationEmail_view(nextView: () -> Unit = {} ) {
                     ) {
 
 
-                    texts.Text_title("Verification Email")
+                    texts.Text_title("Verification Code")
 
                     Spacer(modifier = Modifier.height(8.dp))
 
@@ -119,7 +119,7 @@ fun verificationEmail_view(nextView: () -> Unit = {} ) {
 
                     )
 
-                    Text(text = "Johndoe@gmail.com", fontWeight = FontWeight.Bold,
+                    Text(text = "Johndeo@email.com", fontWeight = FontWeight.Bold,
                         color = Color.Black , modifier = Modifier.clickable{})
 
 

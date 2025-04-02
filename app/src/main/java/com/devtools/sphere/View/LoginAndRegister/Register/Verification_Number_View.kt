@@ -1,4 +1,4 @@
-package com.devtools.sphere.View.LoginAndRegister
+package com.devtools.sphere.View.LoginAndRegister.Register
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -31,6 +31,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.devtools.sphere.Components.Buttons
+import com.devtools.sphere.Components.OTPInputScreen
 import com.devtools.sphere.Components.Texts
 import com.devtools.sphere.ui.theme.SphereTheme
 

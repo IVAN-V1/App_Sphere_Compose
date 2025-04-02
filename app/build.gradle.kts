@@ -68,6 +68,12 @@ dependencies {
 
     implementation(libs.androidx.room.runtime)
 
+    implementation(libs.androidx.core.splashscreen)
 
+    implementation(libs.kotlinx.coroutines.android)
+
+
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
 
 }

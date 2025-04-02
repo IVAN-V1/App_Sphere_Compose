@@ -1,4 +1,4 @@
-package com.devtools.sphere.View.LoginAndRegister
+package com.devtools.sphere.View.LoginAndRegister.Login
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -29,7 +29,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.devtools.sphere.Components.Buttons
 import com.devtools.sphere.Components.TextFields
@@ -40,9 +39,8 @@ import com.devtools.sphere.ui.theme.SphereTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 
-@Preview
 @Composable
-fun Login_View(NexView: () -> Unit = {},reset_password: () -> Unit = {}) {
+fun Login_View(NexView: () -> Unit = {},reset_password: () -> Unit = {}, NexView_Home: () -> Unit ) {
 
     val texts = Texts()
     val buttoms = Buttons()
@@ -151,7 +149,7 @@ fun Login_View(NexView: () -> Unit = {},reset_password: () -> Unit = {}) {
                     Spacer(modifier = Modifier.height(24.dp))
 
 
-                    buttoms.ButtonLogin("Login",{})
+                    buttoms.ButtonLogin("Login",NexView_Home)
 
                     Spacer(modifier = Modifier.height(16.dp))
 

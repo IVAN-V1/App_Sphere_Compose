@@ -1,11 +1,9 @@
-package com.devtools.sphere.View.LoginAndRegister
+package com.devtools.sphere.View.LoginAndRegister.ResetPassword_
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
@@ -21,14 +19,11 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults.topAppBarColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.devtools.sphere.Components.Buttons
@@ -38,9 +33,9 @@ import com.devtools.sphere.ui.theme.SphereTheme
 
 
 @OptIn(ExperimentalMaterial3Api::class)
-@Preview
 @Composable
-fun SignUpView(nexView: () -> Unit = {} ) {
+@Preview
+fun newPasswordView(nexView: () -> Unit = {} ) {
     val texts = Texts()
     val buttoms = Buttons()
 
@@ -76,21 +71,6 @@ fun SignUpView(nexView: () -> Unit = {} ) {
 
             },
 
-          bottomBar = {
-              Column(
-                  modifier = Modifier
-                      .fillMaxWidth()
-                      .padding(bottom = 24.dp), // Add padding to separate from the bottom
-                  horizontalAlignment = Alignment.CenterHorizontally,
-              ) {
-                  Text(text = "By clicking Register, you agree to our", color = Color.Gray)
-                  Text(
-                      text = "Terms and Data Policy.",
-                      fontWeight = FontWeight.Bold,
-                      color = Color.Black
-                  )
-              }
-          }
 
         ) { innerPadding ->
 
@@ -116,11 +96,11 @@ fun SignUpView(nexView: () -> Unit = {} ) {
                     ) {
 
 
-                    texts.Text_title("Sign Up")
+                    texts.Text_title("New Password")
 
                     Spacer(modifier = Modifier.height(8.dp))
 
-                    texts.titleMedium("Create account and choose favorite menu",
+                    texts.titleMedium("Create your new password, so you can login to your account.",
                         Modifier.align(Alignment.Start)
 
                     )
@@ -129,7 +109,7 @@ fun SignUpView(nexView: () -> Unit = {} ) {
                     Spacer(modifier = Modifier.height(24.dp))
 
                     // Campo Email
-                    texts.Text_body_medium("Name")
+                    texts.Text_body_medium("New Password")
 
                     textFields.textfield_normal()
 
@@ -137,38 +117,19 @@ fun SignUpView(nexView: () -> Unit = {} ) {
                     Spacer(modifier = Modifier.height(16.dp))
 
                     // Campo Email
-                    texts.Text_body_medium("Email")
+                    texts.Text_body_medium("Confirm Password")
 
                     textFields.textfield_normal()
 
                     Spacer(modifier = Modifier.height(16.dp))
 
-                    // Campo Password
-                    texts.Text_body_medium("Password")
 
-                    textFields.textfield_password()
 
+                    buttoms.ButtonLogin("send",nexView)
 
                     Spacer(modifier = Modifier.height(16.dp))
 
 
-                    buttoms.ButtonLogin("Register",nexView)
-
-                    Spacer(modifier = Modifier.height(16.dp))
-
-                    // Enlace "Sign Up"
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.Center
-                    ) {
-                        Text(text = "Have an account?", color = Color.Gray)
-                        Text(text = "Sign In", fontWeight = FontWeight.Bold,
-                            color = Color.Black , modifier = Modifier.clickable{
-
-                            })
-                    }
-
-                    Spacer(modifier = Modifier.height(100.dp))
 
 
                 }
@@ -184,4 +145,3 @@ fun SignUpView(nexView: () -> Unit = {} ) {
 
 
 }
-

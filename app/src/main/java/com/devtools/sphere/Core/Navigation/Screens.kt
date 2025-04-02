@@ -39,3 +39,34 @@ object  Forgot_Password_Screen
 @Serializable
 object  HomeScreen
 
+
+@Serializable
+object ResetPasswordEmailScreen
+
+
+@Serializable
+object ResetPasswordNumberScreen
+
+
+
+
+@Serializable
+object VerifiResetEmailScreen
+
+
+
+@Serializable
+object VerifiResetNumberScreen
+
+
+@Serializable
+object NewPasswordScreen
+
+
+
+@Serializable
+object succesNewPasswordScreen
+
+
+
+

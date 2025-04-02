@@ -18,7 +18,7 @@ class Texts {
 
 
     @Composable
-    fun Text_title(text: String){
+    fun Text_title(text: String, modifier: Modifier = Modifier){
 
         SphereTheme {
 

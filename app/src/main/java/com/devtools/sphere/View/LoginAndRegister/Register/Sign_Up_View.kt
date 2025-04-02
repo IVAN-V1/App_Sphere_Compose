@@ -1,6 +1,7 @@
-package com.devtools.sphere.View.LoginAndRegister.Password
+package com.devtools.sphere.View.LoginAndRegister.Register
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -20,28 +21,30 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults.topAppBarColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.devtools.sphere.Components.Buttons
-import com.devtools.sphere.Components.SelectableCard
 import com.devtools.sphere.Components.TextFields
 import com.devtools.sphere.Components.Texts
-import com.devtools.sphere.R
 import com.devtools.sphere.ui.theme.SphereTheme
 
 
 @OptIn(ExperimentalMaterial3Api::class)
+@Preview
 @Composable
-fun ForgotPasswordView(nextView: ()-> Unit = {} ) {
-
+fun SignUpView(ViewVerification: () -> Unit = {}, ViewLogin: () -> Unit = {} ) {
     val texts = Texts()
     val buttoms = Buttons()
-    val textFields = TextFields()
 
+    val textFields = TextFields()
 
     SphereTheme {
 
@@ -73,8 +76,23 @@ fun ForgotPasswordView(nextView: ()-> Unit = {} ) {
 
             },
 
+          bottomBar = {
+              Column(
+                  modifier = Modifier
+                      .fillMaxWidth()
+                      .padding(bottom = 24.dp), // Add padding to separate from the bottom
+                  horizontalAlignment = Alignment.CenterHorizontally,
+              ) {
+                  Text(text = "By clicking Register, you agree to our", color = Color.Gray)
+                  Text(
+                      text = "Terms and Data Policy.",
+                      fontWeight = FontWeight.Bold,
+                      color = Color.Black
+                  )
+              }
+          }
 
-            ) { innerPadding ->
+        ) { innerPadding ->
 
 
             Box(
@@ -93,48 +111,67 @@ fun ForgotPasswordView(nextView: ()-> Unit = {} ) {
                         .verticalScroll(rememberScrollState()),
 
                     verticalArrangement = Arrangement.Top,
-                    horizontalAlignment = Alignment.CenterHorizontally,
+                    horizontalAlignment = Alignment.Start,
 
                     ) {
 
 
-                    texts.Text_title("Forgot Password")
+                    texts.Text_title("Sign Up"
+                    )
 
                     Spacer(modifier = Modifier.height(8.dp))
 
+                    texts.titleMedium("Create account and choose favorite menu",
+                        Modifier.align(Alignment.Start)
 
-
-                    Row (modifier = Modifier.fillMaxWidth(),
-                        Arrangement.Center,
-                        Alignment.CenterVertically
-
-
-                    ){
-
-                        texts.titleMedium("Select which contact details should we use to reset your password",
-                            Modifier.align(Alignment.CenterVertically)
-                        )
-
-                    }
-
+                    )
 
 
                     Spacer(modifier = Modifier.height(24.dp))
 
-                    Row  (modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.Absolute.Center
+                    // Campo Email
+                    texts.Text_body_medium("Name")
 
-                        ) {
+                    textFields.textfield_normal()
 
-                        SelectableCard("Email", "We will send you a link to reset your password",R.drawable.outline_phone_24,true, {})
-
-                        SelectableCard("Phone", "We will send you a link to reset your password",R.drawable.outline_phone_24,true, {})
-
-
-                    }
 
                     Spacer(modifier = Modifier.height(16.dp))
-                    buttoms.ButtonLogin("Continue", nextView)
+
+                    // Campo Email
+                    texts.Text_body_medium("Email")
+
+                    textFields.textfield_normal()
+
+                    Spacer(modifier = Modifier.height(16.dp))
+
+                    // Campo Password
+                    texts.Text_body_medium("Password")
+
+                    textFields.textfield_password()
+
+
+                    Spacer(modifier = Modifier.height(16.dp))
+
+
+                    buttoms.ButtonLogin("Register",ViewVerification)
+
+                    Spacer(modifier = Modifier.height(16.dp))
+
+                    // Enlace "Sign Up"
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.Center
+                    ) {
+                        Text(text = "Have an account?", color = Color.Gray)
+                        Text(text = "Sign In", fontWeight = FontWeight.Bold,
+                            color = Color.Black , modifier = Modifier.clickable(
+
+                                onClick = ViewLogin
+                            ))
+                    }
+
+                    Spacer(modifier = Modifier.height(100.dp))
+
 
                 }
 
@@ -149,3 +186,4 @@ fun ForgotPasswordView(nextView: ()-> Unit = {} ) {
 
 
 }
+

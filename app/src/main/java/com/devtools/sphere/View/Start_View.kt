@@ -1,6 +1,7 @@
 package com.devtools.sphere.View
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -15,9 +16,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.tooling.preview.PreviewScreenSizes
 import androidx.compose.ui.unit.dp
-import androidx.core.view.WindowCompat
 import com.devtools.sphere.Components.OnboardingScreen
 import com.devtools.sphere.ui.theme.SphereTheme
 
@@ -26,7 +25,7 @@ import com.devtools.sphere.ui.theme.SphereTheme
 @Composable
 
 @Preview
-fun start_View(nextView: () -> Unit = {}) {
+fun start_View(skip: () -> Unit = {}, ViewSignIn: ()-> Unit ={}, ViewSignUp: ()-> Unit ={} ) {
 
 
     SphereTheme {
@@ -47,9 +46,13 @@ fun start_View(nextView: () -> Unit = {}) {
             ) {
 
                 Spacer(modifier = Modifier.height(32.dp))
-                Text("Skip", Modifier.padding(start = 16.dp))
+                Text("Skip", Modifier.padding(start = 16.dp).clickable(
 
-                OnboardingScreen(nextView)
+                    onClick = skip
+                ),
+                    )
+
+                OnboardingScreen(skip,ViewSignIn)
 
 
             }
